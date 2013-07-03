@@ -1,0 +1,133 @@
+/* Mega Dropdown */
+
+// Variables __________________________________
+$primary-color: #333;
+
+
+
+
+// Styles _____________________________________
+
+#header-navigation {
+  position: relative;
+  height: 45px;
+}
+.mega-menu {
+  .child-menu {
+  	display: none;
+  	background: lighten($primary-color, 10);
+  	color: white;
+  	.panel {
+  		color: $primary-color;
+  	}
+  }
+  .parent-menu {
+  	list-style: none;
+  	background: $primary-color;
+  	width: 100%;
+  	margin: 0;
+  	float: left;
+  	position: relative;
+  	z-index: 100;
+  	> li {
+  		display: block;
+  		float: left;
+  		height: auto;
+  		border-right: 1px solid lighten($primary-color, 10);
+  		&:hover {
+  			background: lighten($primary-color, 10);
+  		}
+  		a {
+  			padding: 4px 15px;
+  			display: block;
+  		}
+  		&:hover > .child-menu {
+  			display: block;
+  		}
+  	}
+  }
+  .child-menu {
+  	position: absolute;
+  	top: 100%;
+  	left: 0;
+  	width: 100%;
+  }
+  
+}
+
+.show-small {
+  display: none;
+}
+
+
+// @media screen and (min-width: 768px) { }
+
+
+
+
+@media screen and (max-width: 767px) {
+  #header-navigation {
+    background: $primary-color;
+  }
+  .show-small {
+    display: block;
+  }
+  .mega-menu {
+    h1 {
+      text-align: center;
+    }
+    .parent-menu {
+      position: absolute;
+      top: 100%;
+      left: 0px;
+      width: 100%;
+      display: none;
+      &.open {
+        display: block;
+      }
+      > li {
+        width: 100%;
+        display: block;
+        clear: both;
+        .child-menu {
+          display: none !important;
+        }
+      } 
+    }
+  }
+  #searchform {
+    display: none;
+  }
+  #searchform.open {
+    display: block;
+  }
+
+  .mobile-menu-toggle {
+      display: block;
+      border-right: 1px solid lighten($primary-color, 10);
+      height: 100%;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      z-index: 2;
+      padding: 14px;
+  }
+  .mobile-search-toggle {
+      display: block;
+      border-left: 1px solid lighten($primary-color, 10);
+      height: 100%;
+      position: absolute;
+      top: 0%;
+      right: 0%;
+      z-index: 2;
+      padding: 14px;
+  }
+
+  // If no js...
+  .no-js .mega-menu .parent-menu {
+    display: block !important;
+  }
+
+
+
+} // Media query

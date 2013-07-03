@@ -1,0 +1,137 @@
+/* Mega Dropdown */
+/* line 11, scss/app.scss */
+#header-navigation {
+  position: relative;
+  height: 45px;
+}
+
+/* line 16, scss/app.scss */
+.mega-menu .child-menu {
+  display: none;
+  background: #4d4d4d;
+  color: white;
+}
+/* line 20, scss/app.scss */
+.mega-menu .child-menu .panel {
+  color: #333333;
+}
+/* line 24, scss/app.scss */
+.mega-menu .parent-menu {
+  list-style: none;
+  background: #333333;
+  width: 100%;
+  margin: 0;
+  float: left;
+  position: relative;
+  z-index: 100;
+}
+/* line 32, scss/app.scss */
+.mega-menu .parent-menu > li {
+  display: block;
+  float: left;
+  height: auto;
+  border-right: 1px solid #4d4d4d;
+}
+/* line 37, scss/app.scss */
+.mega-menu .parent-menu > li:hover {
+  background: #4d4d4d;
+}
+/* line 40, scss/app.scss */
+.mega-menu .parent-menu > li a {
+  padding: 4px 15px;
+  display: block;
+}
+/* line 44, scss/app.scss */
+.mega-menu .parent-menu > li:hover > .child-menu {
+  display: block;
+}
+/* line 49, scss/app.scss */
+.mega-menu .child-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+/* line 58, scss/app.scss */
+.show-small {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 69, scss/app.scss */
+  #header-navigation {
+    background: #333333;
+  }
+
+  /* line 72, scss/app.scss */
+  .show-small {
+    display: block;
+  }
+
+  /* line 76, scss/app.scss */
+  .mega-menu h1 {
+    text-align: center;
+  }
+  /* line 79, scss/app.scss */
+  .mega-menu .parent-menu {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    display: none;
+  }
+  /* line 85, scss/app.scss */
+  .mega-menu .parent-menu.open {
+    display: block;
+  }
+  /* line 88, scss/app.scss */
+  .mega-menu .parent-menu > li {
+    width: 100%;
+    display: block;
+    clear: both;
+  }
+  /* line 92, scss/app.scss */
+  .mega-menu .parent-menu > li .child-menu {
+    display: none !important;
+  }
+
+  /* line 98, scss/app.scss */
+  #searchform {
+    display: none;
+  }
+
+  /* line 101, scss/app.scss */
+  #searchform.open {
+    display: block;
+  }
+
+  /* line 105, scss/app.scss */
+  .mobile-menu-toggle {
+    display: block;
+    border-right: 1px solid #4d4d4d;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: 2;
+    padding: 14px;
+  }
+
+  /* line 115, scss/app.scss */
+  .mobile-search-toggle {
+    display: block;
+    border-left: 1px solid #4d4d4d;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    z-index: 2;
+    padding: 14px;
+  }
+
+  /* line 127, scss/app.scss */
+  .no-js .mega-menu .parent-menu {
+    display: block !important;
+  }
+}
